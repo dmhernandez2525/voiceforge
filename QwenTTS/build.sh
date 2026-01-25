@@ -1,15 +1,15 @@
 #!/bin/zsh
-# Build Qwen TTS menubar app
+# Build VoiceForge menubar app
 
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-APP_NAME="Qwen TTS"
+APP_NAME="VoiceForge"
 APP_PATH="$HOME/Desktop/${APP_NAME}.app"
 BUILD_DIR="$SCRIPT_DIR/build"
 SOURCES_DIR="$SCRIPT_DIR/Sources"
 
-echo "Building Qwen TTS..."
+echo "Building VoiceForge..."
 
 # Clean previous build
 rm -rf "$BUILD_DIR"
@@ -59,11 +59,11 @@ cat > "$APP_PATH/Contents/Info.plist" << 'EOF'
     <key>CFBundleExecutable</key>
     <string>QwenTTS</string>
     <key>CFBundleIdentifier</key>
-    <string>com.qwen-tts.app</string>
+    <string>com.voiceforge.app</string>
     <key>CFBundleName</key>
-    <string>Qwen TTS</string>
+    <string>VoiceForge</string>
     <key>CFBundleDisplayName</key>
-    <string>Qwen TTS</string>
+    <string>VoiceForge</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleVersion</key>
@@ -81,7 +81,7 @@ cat > "$APP_PATH/Contents/Info.plist" << 'EOF'
     <key>LSApplicationCategoryType</key>
     <string>public.app-category.utilities</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>Qwen TTS may use the microphone for recording voice samples.</string>
+    <string>VoiceForge may use the microphone for recording voice samples.</string>
 </dict>
 </plist>
 EOF

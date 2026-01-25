@@ -5,8 +5,8 @@ import Cocoa
 
 struct Paths {
     static let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        .appendingPathComponent("QwenTTS").path
-    static let outputBase = NSHomeDirectory() + "/Desktop/Qwen-TTS-Output"
+        .appendingPathComponent("VoiceForge").path
+    static let outputBase = NSHomeDirectory() + "/Desktop/VoiceForge-Output"
     static let configFile = appSupport + "/config.json"
 }
 

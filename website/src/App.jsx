@@ -387,6 +387,83 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Coming Soon - PersonaPlex */}
+      <section className="py-24 px-4 bg-gradient-to-r from-purple-900/30 to-indigo-900/30">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-6">
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              <span className="text-purple-300 text-sm font-medium">Coming Soon</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Conversational Voice Design</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Design voices through natural conversation. Powered by NVIDIA's PersonaPlex full duplex AI.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-semibold mb-4 text-slate-400">Current Workflow</h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-3 text-slate-500">
+                  <span className="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs">1</span>
+                  Type voice description in form
+                </div>
+                <div className="flex items-center gap-3 text-slate-500">
+                  <span className="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs">2</span>
+                  Click generate and wait
+                </div>
+                <div className="flex items-center gap-3 text-slate-500">
+                  <span className="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-xs">3</span>
+                  Listen, adjust, repeat 5+ times
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-2xl p-6 border border-purple-500/30">
+              <h3 className="text-lg font-semibold mb-4 text-purple-300">With PersonaPlex</h3>
+              <div className="space-y-3 text-sm">
+                <div className="bg-slate-900/50 rounded-lg p-3">
+                  <p className="text-slate-400 text-xs mb-1">You:</p>
+                  <p className="text-white">"I need a warm, professional female voice"</p>
+                </div>
+                <div className="bg-purple-900/30 rounded-lg p-3">
+                  <p className="text-purple-400 text-xs mb-1">VoiceForge:</p>
+                  <p className="text-purple-200">"How about this?" <span className="text-purple-400">[plays sample]</span></p>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3">
+                  <p className="text-slate-400 text-xs mb-1">You:</p>
+                  <p className="text-white">"A bit deeper, with slight British accent"</p>
+                </div>
+                <div className="bg-purple-900/30 rounded-lg p-3">
+                  <p className="text-purple-400 text-xs mb-1">VoiceForge:</p>
+                  <p className="text-purple-200">"Like this?" <span className="text-purple-400">[adjusts in real-time]</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
+              <p className="text-2xl font-bold text-purple-400">&lt;500ms</p>
+              <p className="text-xs text-slate-400">Response Latency</p>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
+              <p className="text-2xl font-bold text-purple-400">Full Duplex</p>
+              <p className="text-xs text-slate-400">Simultaneous Talk</p>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
+              <p className="text-2xl font-bold text-purple-400">100%</p>
+              <p className="text-xs text-slate-400">Local Processing</p>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
+              <p className="text-2xl font-bold text-purple-400">Open Source</p>
+              <p className="text-xs text-slate-400">Apache 2.0</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 px-4 bg-gradient-to-r from-qwen-600/20 to-voice-600/20">
         <div className="max-w-4xl mx-auto text-center">

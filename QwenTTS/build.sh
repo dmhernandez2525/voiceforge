@@ -50,6 +50,12 @@ cp "$BUILD_DIR/QwenTTS" "$APP_PATH/Contents/MacOS/"
 # Copy Python backend
 cp -r "$SCRIPT_DIR/../python-backend/"* "$APP_PATH/Contents/Resources/python-backend/"
 
+# Copy app icon
+if [ -f "$SCRIPT_DIR/Resources/AppIcon.icns" ]; then
+    cp "$SCRIPT_DIR/Resources/AppIcon.icns" "$APP_PATH/Contents/Resources/"
+    echo "App icon installed"
+fi
+
 # Create Info.plist
 cat > "$APP_PATH/Contents/Info.plist" << 'EOF'
 <?xml version="1.0" encoding="UTF-8"?>

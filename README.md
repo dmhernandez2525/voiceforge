@@ -7,7 +7,7 @@
 
 A powerful macOS app for local text-to-speech generation and voice cloning, powered by Qwen3-TTS.
 
-**[View Website](https://voiceforge.onrender.com)** | **[GitHub Repo](https://github.com/dmhernandez2525/qwen-tts-app)** | **[Try Cloud Version](https://voiceforge.onrender.com/cloud)**
+**[View Website](https://voiceforge.onrender.com)** | **[GitHub Repo](https://github.com/dmhernandez2525/voiceforge)** | **[Try Cloud Version](https://voiceforge.onrender.com/cloud)**
 
 ---
 
@@ -112,8 +112,8 @@ VoiceForge brings state-of-the-art AI voice synthesis to your Mac. Clone any voi
 
 ```bash
 # Clone the repository
-git clone https://github.com/dmhernandez2525/qwen-tts-app.git
-cd qwen-tts-app
+git clone https://github.com/dmhernandez2525/voiceforge.git
+cd voiceforge
 
 # Install Python dependencies
 ./scripts/install.sh
@@ -435,7 +435,7 @@ This is normal - models (~3GB each) download on first use. Check server log for 
 ## Project Structure
 
 ```
-qwen-tts-app/
+voiceforge/
 ├── QwenTTS/                    # Swift macOS app
 │   ├── Sources/
 │   │   ├── AppDelegate.swift   # App lifecycle & menu bar
@@ -475,8 +475,8 @@ qwen-tts-app/
 
 ```bash
 # Clone repository
-git clone https://github.com/dmhernandez2525/qwen-tts-app.git
-cd qwen-tts-app
+git clone https://github.com/dmhernandez2525/voiceforge.git
+cd voiceforge
 
 # Setup Python environment
 python3.11 -m venv venv

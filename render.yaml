@@ -1,7 +1,7 @@
 services:
   - type: web
     runtime: static
-    name: voiceforge
+    name: voiceforge-site
     rootDir: website
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist

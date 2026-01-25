@@ -21,7 +21,7 @@ function App() {
   const [copied, setCopied] = useState(false)
 
   const copyCommand = () => {
-    navigator.clipboard.writeText('git clone https://github.com/yourusername/qwen-tts-app.git && cd qwen-tts-app && ./scripts/install.sh')
+    navigator.clipboard.writeText('git clone https://github.com/dmhernandez2525/qwen-tts-app.git && cd qwen-tts-app && ./scripts/install.sh')
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -40,7 +40,7 @@ function App() {
           <div className="flex items-center gap-6">
             <a href="#features" className="text-slate-300 hover:text-white transition-colors hidden sm:block">Features</a>
             <a href="#how-it-works" className="text-slate-300 hover:text-white transition-colors hidden sm:block">How It Works</a>
-            <a href="https://github.com/yourusername/qwen-tts-app" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/dmhernandez2525/qwen-tts-app" target="_blank" rel="noopener noreferrer"
                className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors">
               <Github className="w-4 h-4" />
               <span className="hidden sm:inline">GitHub</span>
@@ -74,7 +74,7 @@ function App() {
               <Download className="w-5 h-5" />
               Download for Mac
             </a>
-            <a href="https://github.com/yourusername/qwen-tts-app" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/dmhernandez2525/qwen-tts-app" target="_blank" rel="noopener noreferrer"
                className="inline-flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white font-semibold px-8 py-4 rounded-xl transition-colors">
               <Github className="w-5 h-5" />
               View Source
@@ -229,7 +229,7 @@ function App() {
             </div>
             <div className="p-6 font-mono text-sm">
               <p className="text-slate-500"># Clone and install</p>
-              <p className="text-green-400">git clone https://github.com/yourusername/qwen-tts-app.git</p>
+              <p className="text-green-400">git clone https://github.com/dmhernandez2525/qwen-tts-app.git</p>
               <p className="text-green-400">cd qwen-tts-app</p>
               <p className="text-green-400">./scripts/install.sh</p>
               <p className="text-slate-500 mt-4"># Build and run</p>
@@ -267,7 +267,7 @@ function App() {
           <p className="text-slate-500 text-sm">
             Powered by <a href="https://github.com/QwenLM/Qwen3-TTS" target="_blank" rel="noopener noreferrer" className="text-qwen-400 hover:underline">Qwen3-TTS</a> from Alibaba Cloud
           </p>
-          <a href="https://github.com/yourusername/qwen-tts-app" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/dmhernandez2525/qwen-tts-app" target="_blank" rel="noopener noreferrer"
              className="text-slate-400 hover:text-white transition-colors">
             <Github className="w-5 h-5" />
           </a>

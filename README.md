@@ -534,6 +534,46 @@ npm run dev  # Starts at localhost:5173
 
 ---
 
+## Coming Soon: Conversational Voice Design (PersonaPlex Integration)
+
+We're integrating NVIDIA's **PersonaPlex** - an open-source full duplex conversational AI that will enable a revolutionary new way to design and refine voices through natural conversation.
+
+### How It Works Today
+```
+Text input → Voice generated → Listen → Adjust parameters → Regenerate
+```
+
+### How It Will Work with PersonaPlex
+```
+You: "I want a voice that sounds like a friendly professor"
+VoiceForge: "Okay, something warm and knowledgeable. Male or female?"
+You: "Male, maybe in his 50s"
+VoiceForge: "How about this?" [generates sample]
+You: "A bit deeper, and add a slight British accent"
+VoiceForge: "Like this?" [adjusts in real-time]
+You: "Perfect!"
+```
+
+### Key Benefits
+
+| Feature | Current | With PersonaPlex |
+|---------|---------|------------------|
+| Voice Design | Form-based input | **Conversational** |
+| Refinement | Manual parameter tweaks | **"Make it warmer"** |
+| Iteration Speed | Minutes per iteration | **Seconds** |
+| Learning Curve | Understand voice parameters | **Just describe what you want** |
+
+### Technical Details
+- Full duplex conversation (simultaneous listening/speaking)
+- Back-channeling for natural flow ("uh-huh", "got it")
+- <500ms response latency
+- Runs 100% locally (24GB+ VRAM required)
+- Open source (Apache 2.0)
+
+See `ROADMAP.md` for implementation timeline.
+
+---
+
 ## Privacy & Security
 
 - **100% Local**: No data sent to external servers

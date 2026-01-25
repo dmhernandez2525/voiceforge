@@ -121,7 +121,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 button.image = image.withSymbolConfiguration(config)
             }
         } else {
-            button.image = NSImage(systemSymbolName: "waveform.circle", accessibilityDescription: "Qwen TTS")
+            button.image = NSImage(systemSymbolName: "waveform.circle", accessibilityDescription: "VoiceForge")
             button.image?.isTemplate = true
         }
     }

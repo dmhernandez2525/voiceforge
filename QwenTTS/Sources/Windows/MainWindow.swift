@@ -36,7 +36,7 @@ class MainWindowController: NSWindowController {
             backing: .buffered,
             defer: false
         )
-        window.title = "Qwen3-TTS Voice Generator"
+        window.title = "VoiceForge"
         window.center()
         window.minSize = NSSize(width: 600, height: 500)
 
@@ -155,7 +155,7 @@ class MainWindowController: NSWindowController {
         customTextView = NSTextView()
         customTextView.isRichText = false
         customTextView.font = .systemFont(ofSize: 13)
-        customTextView.string = "Hello, this is a test of the Qwen text-to-speech system."
+        customTextView.string = "Hello, this is a test of the VoiceForge text-to-speech system."
         textScroll.documentView = customTextView
         textScroll.translatesAutoresizingMaskIntoConstraints = false
         textScroll.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -325,7 +325,7 @@ class MainWindowController: NSWindowController {
         designTextView = NSTextView()
         designTextView.isRichText = false
         designTextView.font = .systemFont(ofSize: 13)
-        designTextView.string = "Hello! Welcome to Qwen text-to-speech. I hope you're having a wonderful day."
+        designTextView.string = "Hello! Welcome to VoiceForge. I hope you're having a wonderful day."
         textScroll.documentView = designTextView
         textScroll.translatesAutoresizingMaskIntoConstraints = false
         textScroll.heightAnchor.constraint(equalToConstant: 80).isActive = true

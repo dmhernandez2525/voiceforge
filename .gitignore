@@ -1,0 +1,30 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+.cache/
+
+# macOS
+.DS_Store
+*.app
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Build
+QwenTTS/build/
+
+# Local config
+*.local
+
+# Hugging Face cache (models are downloaded here)
+.cache/

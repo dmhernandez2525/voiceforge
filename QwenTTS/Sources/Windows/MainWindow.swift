@@ -109,14 +109,19 @@ class MainWindowController: NSWindowController {
         container.orientation = .horizontal
         container.spacing = 8
 
-        serverStatusLabel = NSTextField(labelWithString: "Server: Checking...")
-        serverStatusLabel.font = .systemFont(ofSize: 12)
+        serverStatusLabel = NSTextField(labelWithString: "Server: Starting...")
+        serverStatusLabel.font = .systemFont(ofSize: 12, weight: .medium)
+
+        let helpLabel = NSTextField(labelWithString: "First generation downloads ~3GB model")
+        helpLabel.font = .systemFont(ofSize: 10)
+        helpLabel.textColor = .secondaryLabelColor
 
         let startButton = NSButton(title: "Start Server", target: self, action: #selector(startServerAction))
         startButton.bezelStyle = .rounded
         startButton.controlSize = .small
 
         container.addArrangedSubview(serverStatusLabel)
+        container.addArrangedSubview(helpLabel)
         container.addArrangedSubview(NSView()) // Spacer
         container.addArrangedSubview(startButton)
 
@@ -545,15 +550,33 @@ class MainWindowController: NSWindowController {
     // MARK: - Public Interface
 
     func updateServerStatus(_ running: Bool) {
-        serverStatusLabel.stringValue = running ? "Server: Running" : "Server: Stopped"
+        serverStatusLabel.stringValue = running ? "Server: Ready" : "Server: Stopped"
         serverStatusLabel.textColor = running ? .systemGreen : .systemRed
         generateButton.isEnabled = running
+        if running {
+            outputPathLabel.stringValue = "Ready to generate. First run downloads model (~3GB)."
+        }
+    }
+
+    func showServerStarting() {
+        serverStatusLabel.stringValue = "Server: Starting..."
+        serverStatusLabel.textColor = .systemOrange
+        generateButton.isEnabled = false
+        outputPathLabel.stringValue = "Starting Python server..."
+    }
+
+    func showServerError(_ message: String) {
+        serverStatusLabel.stringValue = "Server: Error"
+        serverStatusLabel.textColor = .systemRed
+        generateButton.isEnabled = false
+        outputPathLabel.stringValue = "Error: \(message)"
     }
 
     func showGenerating(_ generating: Bool) {
         progressIndicator.isHidden = !generating
         if generating {
             progressIndicator.startAnimation(nil)
+            outputPathLabel.stringValue = "Generating audio (first run downloads model)..."
         } else {
             progressIndicator.stopAnimation(nil)
         }
@@ -562,11 +585,12 @@ class MainWindowController: NSWindowController {
 
     func setOutputPath(_ path: String) {
         currentOutputPath = path
-        outputPathLabel.stringValue = "Output: " + URL(fileURLWithPath: path).lastPathComponent
+        outputPathLabel.stringValue = "Done! Output: " + URL(fileURLWithPath: path).lastPathComponent
         playButton.isEnabled = true
     }
 
     func showError(_ message: String) {
+        outputPathLabel.stringValue = "Error: \(message)"
         let alert = NSAlert()
         alert.messageText = "Error"
         alert.informativeText = message

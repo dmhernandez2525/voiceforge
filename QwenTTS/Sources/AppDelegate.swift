@@ -28,8 +28,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Check server status periodically
         startServerStatusMonitor()
 
+        // Auto-start server on launch
+        autoStartServer()
+
         // Show main window
         showMainWindow()
+    }
+
+    private func autoStartServer() {
+        // Check if server is already running, if not start it
+        ServerManager.shared.checkServerStatus { [weak self] running in
+            if !running {
+                DispatchQueue.main.async {
+                    self?.mainWindow?.showServerStarting()
+                    ServerManager.shared.startServer { success, message in
+                        DispatchQueue.main.async {
+                            if success {
+                                self?.mainWindow?.updateServerStatus(true)
+                            } else {
+                                self?.mainWindow?.showServerError(message)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     func applicationWillTerminate(_ notification: Notification) {

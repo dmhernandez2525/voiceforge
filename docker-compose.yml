@@ -1,0 +1,29 @@
+name: voiceforge
+
+version: '3.8'
+
+services:
+  voiceforge-backend:
+    build:
+      context: ./python-backend
+      dockerfile: Dockerfile
+    container_name: voiceforge-backend
+    ports:
+      - "8765:8765"
+    environment:
+      - DEVICE=cpu
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - voiceforge-output:/app/output
+      - voiceforge-models:/root/.cache
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8765/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  voiceforge-output:
+  voiceforge-models:

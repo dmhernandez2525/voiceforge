@@ -26,7 +26,9 @@ COPY requirements.txt .
 
 # Install PyTorch (CPU version for compatibility)
 # For GPU: pip install torch --index-url https://download.pytorch.org/whl/cu121
-RUN pip install --no-cache-dir torch
+# Set longer timeout for large package downloads
+ENV PIP_DEFAULT_TIMEOUT=300
+RUN pip install --no-cache-dir --retries 3 torch
 
 # Install other dependencies
 RUN pip install --no-cache-dir -r requirements.txt

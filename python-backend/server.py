@@ -20,8 +20,8 @@ model_clone = None
 model_design = None
 model_lock = threading.Lock()
 
-OUTPUT_DIR = Path.home() / "Desktop" / "Qwen-TTS-Output"
-OUTPUT_DIR.mkdir(exist_ok=True)
+OUTPUT_DIR = Path(os.environ.get("OUTPUT_DIR", str(Path.home() / "output")))
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def load_models(model_type="clone"):
     """Load Qwen3-TTS models on demand"""
@@ -275,8 +275,9 @@ class TTSHandler(BaseHTTPRequestHandler):
 
 def main():
     port = int(os.environ.get("PORT", 8765))
-    server = HTTPServer(("127.0.0.1", port), TTSHandler)
-    print(f"Qwen3-TTS Server running on http://127.0.0.1:{port}")
+    host = os.environ.get("HOST", "0.0.0.0")
+    server = HTTPServer((host, port), TTSHandler)
+    print(f"Qwen3-TTS Server running on http://{host}:{port}")
     print(f"Output directory: {OUTPUT_DIR}")
     print("\nEndpoints:")
     print("  GET  /health     - Check server status")
